@@ -246,6 +246,11 @@ class CarInterface(CarInterfaceBase):
       tune.kpV = [3.6, 2.4, 1.5]
       tune.kiV = [0.54, 0.36]
 
+    # Mark added to try to get experimental mode to run on NX300 with DSU installed
+    ret.experimentalLongitudinalAvailable = True
+    ret.openpilotLongitudinalControl = experimental_long
+    ret.pcmCruise = not ret.openpilotLongitudinalControl
+
     return ret
 
   # returns a car.CarState
